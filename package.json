@@ -1,0 +1,8 @@
+{
+    "id": "jid0-P5Jx5NjzHqWccHyB4zJhtsptBog", 
+    "dependencies": [
+        "jetpack-core"
+    ], 
+    "description": "Quakeyfox shakes your browser window whenever there is an earthquake anywhere in the world.", 
+    "author": "David McNamara (dave@briks.si)"
+}
