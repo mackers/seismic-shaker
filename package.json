@@ -7,5 +7,6 @@
     "name": "seismic-shaker",
     "version": "1.0",
     "description": "Seismic Shaker rattles your browser window whenever there is a strong earthquake anywhere in the world.", 
-    "author": "David McNamara (dave@briks.si)"
+    "author": "Briks Software (http://briks.si/)",
+    "contributors": ["David McNamara (dave@briks.si)"]
 }

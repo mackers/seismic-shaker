@@ -23,6 +23,18 @@ h2 {font-size: 1.2em}
 }
 
     </style>
+    <script>
+function sendTestEvent() {
+var evt = document.createEvent("Events");
+evt.initEvent("SeismicShakerTest", true, false);
+document.dispatchEvent(evt);
+}
+function openAddonsManager() {
+var evt = document.createEvent("Events");
+evt.initEvent("SeismicShakerOpenAddonsManager", true, false);
+document.dispatchEvent(evt);
+}
+    </script>
 </head>
 
 <body id="index" class="home">
@@ -43,8 +55,8 @@ h2 {font-size: 1.2em}
             <a href="http://earthquake.usgs.gov/earthquakes/catalogs/1day-M2.5.xml">feed of recent M 2.5+ earthquakes</a>
             hourly and shakes your active browser window should an earthquake occur somewhere on the planet.</p>
 
-        <p>If you don't want to wait for mother earth to get angry, you can test the behaviour of this add-on by
-            <a href="#" onclick="alert('TODO')">clicking here</a>.</p>
+        <p>If you can't wait for Mother Earth to get angry, you can 
+            <a href="#" onclick="sendTestEvent();return false;">simulate an earthquake event</a>.</p>
 
         <h3>Earthquake Safety</h3>
 
@@ -54,7 +66,8 @@ h2 {font-size: 1.2em}
 
         <h3>Uninstall</h3>
 
-        <p>You can uninstall this add-on via the <a href="about:addons">Firefox Add-ons Manager</a>.</p>
+        <!--<p>You can uninstall this add-on via the <a href="about:addons" onclick="openAddonsManager(); return false;">Firefox Add-ons Manager</a>.</p>-->
+        <p>You can uninstall this add-on via the Firefox Add-ons Manager.</p>
 
         </div>
         
