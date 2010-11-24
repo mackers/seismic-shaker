@@ -1,8 +1,11 @@
 {
     "id": "jid0-P5Jx5NjzHqWccHyB4zJhtsptBog", 
+    "license": "MPL (http://www.mozilla.org/MPL/)",
     "dependencies": [
         "jetpack-core"
     ], 
-    "description": "Quakeyfox shakes your browser window whenever there is an earthquake anywhere in the world.", 
+    "name": "seismic-shaker",
+    "version": "1.0",
+    "description": "Seismic Shaker rattles your browser window whenever there is a strong earthquake anywhere in the world.", 
     "author": "David McNamara (dave@briks.si)"
 }
