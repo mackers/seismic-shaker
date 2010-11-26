@@ -5,8 +5,10 @@
         "jetpack-core"
     ], 
     "name": "seismic-shaker",
-    "version": "1.0",
-    "description": "Seismic Shaker rattles your browser window whenever there is a strong earthquake anywhere in the world.", 
+    "fullName": "Seismic Shaker",
+    "version": "1.1",
+    "description": "Seismic Shaker rattles your browser window whenever a strong earthquake occurs near you.",
     "author": "Briks Software (http://briks.si/)",
-    "contributors": ["David McNamara (dave@briks.si)"]
+    "contributors": ["David McNamara (dave@briks.si)"],
+    "icon": "data/icon.png"
 }

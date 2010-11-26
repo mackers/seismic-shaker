@@ -41,7 +41,7 @@ document.dispatchEvent(evt);
     
     <header id="banner">
         
-        <h1><img src="icon.png" style="padding: 0 0.5em;"/>Seismic Shaker <span style="font-size: 0.5em">v1.0</span></h1>
+        <h1><img src="icon.png" style="padding: 0 0.5em;"/>Seismic Shaker <span style="font-size: 0.5em">v1.1</span></h1>
     </header>
 
     <section id="content">
@@ -49,11 +49,11 @@ document.dispatchEvent(evt);
 
         <h3>About this Add-on</h3>
 
-        <p>Seismic Shaker rattles your browser window whenever there is a strong earthquake anywhere in the world.</p>
+        <p>Seismic Shaker rattles your browser window whenever a strong earthquake occurs near you.</p>
 
-        <p>This add-on checks the <a href="http://www.usgs.gov/">U.S. Geological Survey</a>'s 
+        <p>This add-on hourly checks the <a href="http://www.usgs.gov/">U.S. Geological Survey</a>'s 
             <a href="http://earthquake.usgs.gov/earthquakes/catalogs/1day-M2.5.xml">feed of recent M 2.5+ earthquakes</a>
-            hourly and shakes your active browser window should an earthquake occur somewhere on the planet.</p>
+            hourly and shakes your active browser window should an earthquake happen anywhere within 500km of your current location.</p>
 
         <p>If you can't wait for Mother Earth to get angry, you can 
             <a href="#" onclick="sendTestEvent();return false;">simulate an earthquake event</a>.</p>
