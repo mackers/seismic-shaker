@@ -7,5 +7,5 @@
     "description": "Seismic Shaker rattles your browser window whenever a strong earthquake occurs near you.",
     "author": "Briks Software (http://briks.si/)",
     "contributors": ["David McNamara (dave@briks.si)"],
-    "icon": "data/icon-16x16.png"
+    "icon": "data/icon-32x32.png"
 }
