@@ -1,14 +1,11 @@
 {
     "id": "jid0-P5Jx5NjzHqWccHyB4zJhtsptBog", 
     "license": "MPL (http://www.mozilla.org/MPL/)",
-    "dependencies": [
-        "jetpack-core"
-    ], 
     "name": "seismic-shaker",
     "fullName": "Seismic Shaker",
-    "version": "1.1",
+    "version": "1.1.1",
     "description": "Seismic Shaker rattles your browser window whenever a strong earthquake occurs near you.",
     "author": "Briks Software (http://briks.si/)",
     "contributors": ["David McNamara (dave@briks.si)"],
-    "icon": "data/icon.png"
+    "icon": "data/icon-16x16.png"
 }
