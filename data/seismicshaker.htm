@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Seismic Shaker</title>
+    <meta charset="utf-8" />
+    <script src="OpenLayers.js"></script>
+    <script >
+    window.addEventListener('load', function()
+    {
+        window.map = new OpenLayers.Map('map');
+        var wms = new OpenLayers.Layer.WMS(
+          "OpenLayers WMS",
+            "http://vmap0.tiles.osgeo.org/wms/vmap0",
+              {'layers':'basic'} );
+        map.addLayer(wms);
+        map.zoomToMaxExtent();
+        map.zoomIn();
+
+        window.markers = new OpenLayers.Layer.Markers("quakes");
+        map.addLayer(markers);
+
+        window.mylocationmarker = new OpenLayers.Layer.Markers("mylocationmarker");
+        map.addLayer(mylocationmarker);
+
+        /*
+        var styles = new OpenLayers.StyleMap({
+            "default": {
+                graphicName: "${type}",
+                pointRadius: 10,
+                strokeColor: "fuchsia",
+                strokeWidth: 1,
+                fillColor: "transparent",
+                fillOpacity: 0.6
+            }
+        });
+        
+        // Create a vector layer and give it your style map.
+        window.circle = new OpenLayers.Layer.Vector("Graphics", {
+            styleMap: styles,
+            isBaseLayer: false
+        });
+
+        map.addLayer(circle);
+        */
+
+    }, true);
+    </script>
+    <style>
+body {
+    background: #F5F4EF url('../images/bg.png');
+    color: #000305;
+    font-size: 87.5%; /* Base font size: 14px */
+    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.429;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    clear: both; margin: 0 auto; width: 800px;
+}
+a:link {
+    text-decoration:  none;
+}
+h1 {
+    margin: 0;
+}
+h2 {
+    font-size: 1.2em
+}
+#content > div {
+    background-color: white;
+    -moz-border-radius: 1em;
+    padding: 0.1em 1.5em;
+}
+
+.addonbarhelper  {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    width: 10em;
+}
+
+.addonbarhelper > p {
+    background-color: white;
+    -moz-border-radius: 1em;
+    padding: 0.5em 1em;
+    font-size: x-small;
+    margin: 0;
+}
+.down-triangle {
+   width: 0;
+   height: 0;
+   border-top: 20px solid white;
+   border-left: 10px solid transparent;
+   border-right: 10px solid transparent;
+    margin-left: 7em;
+}
+.olPopupContent {
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+}
+img[id^="OL_Icon"] {
+    cursor: pointer;
+}
+    </style>
+    <script>
+function sendTestEvent() {
+var evt = document.createEvent("Events");
+evt.initEvent("SeismicShakerTest", true, false);
+document.dispatchEvent(evt);
+}
+function openAddonsManager() {
+var evt = document.createEvent("Events");
+evt.initEvent("SeismicShakerOpenAddonsManager", true, false);
+document.dispatchEvent(evt);
+}
+    </script>
+</head>
+
+<body id="index" class="home">
+    
+    <header id="banner">
+        
+        <h1><img src="icon-64x64.png" style="vertical-align: middle; padding: 0 0.5em;"/>Seismic Shaker <span id="version" style="font-size: 0.5em"/></h1>
+    </header>
+
+    <section id="content">
+        <div>
+
+        <p style="font-weight: bold;">Seismic Shaker rattles your browser whenever a strong earthquake occurs near you.</p>
+
+        <p>It works by polling the <a href="http://www.usgs.gov/">U.S. Geological Survey</a>'s 
+            <a href="http://earthquake.usgs.gov/earthquakes/catalogs/1day-M2.5.xml">feed of recent M 2.5+ earthquakes</a>
+            and checking if there is any activity within 500km of your current location. 
+            The locations of recent quakes will appear on this map:
+        </p>
+
+        <div style="margin-left: 150px;">
+            <div id="map" style="width: 500px; height: 250px; border: 1px solid black;"> </div>
+        </div>
+
+        <p>If you live in an area of high earthquake risk you should familiarize yourself with 
+            <a href="http://environment.nationalgeographic.com/environment/natural-disasters/earthquake-safety-tips/">National
+            Geographic's page on Earthquake Safety Tips</a>.</p>
+
+        <!--<p>You can uninstall this add-on via the <a href="about:addons" onclick="openAddonsManager(); return false;">Firefox Add-ons Manager</a>.</p>-->
+        <p>You can uninstall this add-on via the Firefox Add-ons Manager.</p>
+
+        </div>
+        
+    </section>
+
+    <footer style="text-align: center;">
+        <p>&copy; Briks Software 2011. Seismic Shaker is published under the <a href="http://www.mozilla.org/MPL/">Mozilla Public License (MPL)</a>.</p>
+    </footer>
+
+    <div class="addonbarhelper">
+        <p>You can always access this page from your add-on bar.<br/>You can also
+        <a href="#" onclick="sendTestEvent();return false;">simulate an earthquake event</a>.</p>
+        <div class="down-triangle"> </div>
+    </div>
+
+</body>
+</html>
