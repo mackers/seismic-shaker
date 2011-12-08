@@ -7,5 +7,19 @@
     "description": "Seismic Shaker rattles your browser window whenever a strong earthquake occurs near you.",
     "author": "Briks Software (http://briks.si/)",
     "contributors": ["David McNamara (dave@briks.si)"],
-    "icon": "data/icon-32x32.png"
+    "icon": "data/icon-32x32.png",
+    "preferences": [
+    {
+        "name": "minimumQuakeMagnitude",
+        "title": "Shake for quakes above magnitude:",
+        "type": "string",
+        "value": "2.5"
+    },
+    {
+        "name": "maximumQuakeDistance",
+        "title": "Shake for quakes within distance (km):",
+        "type": "string",
+        "value": "500"
+    }
+    ]
 }
