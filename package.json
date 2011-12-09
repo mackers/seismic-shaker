@@ -11,7 +11,7 @@
     "preferences": [
     {
         "name": "minimumQuakeMagnitude",
-        "title": "Shake for quakes above magnitude:",
+        "title": "Shake for quakes above magnitude (2.5 - 10):",
         "type": "string",
         "value": "2.5"
     },
