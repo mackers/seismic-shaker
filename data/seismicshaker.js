@@ -1,3 +1,11 @@
+document.addEventListener("SeismicShakerTest", function(e) { self.postMessage("test") }, false, true);
+document.addEventListener("SeismicShakerOpenAddonsManager", function(e) { self.postMessage("openaddons") }, false, true);
+
+self.port.on('version', function(version)
+{
+    document.getElementById("version").textContent = 'v' + version;
+});
+
 self.port.on('mylocation', function(mylocation)
 {
     /*
