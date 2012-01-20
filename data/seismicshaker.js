@@ -66,13 +66,15 @@ self.port.on('quakes', function(quakes)
 
     markers.clearMarkers();
 
-    function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+    function addMarker(quake, ll, popupClass, closeBox, overflow) {
 
         var feature = new OpenLayers.Feature(markers, ll); 
         feature.closeBox = closeBox;
         feature.popupClass = popupClass;
-        feature.data.popupContentHTML = popupContentHTML;
         feature.data.overflow = (overflow) ? "auto" : "hidden";
+        feature.data.popupSize = new OpenLayers.Size(200, 60);
+        feature.data._quakeDesc = quake.desc;
+        feature.data._quakeDate = quake.date;
                 
         var marker = feature.createMarker();
 
@@ -84,6 +86,10 @@ self.port.on('quakes', function(quakes)
                 this.popup = this.createPopup(this.closeBox);
                 map.addPopup(this.popup);
                 this.popup.show();
+                var doc = this.popup.contentDiv.ownerDocument;
+                this.popup.contentDiv.appendChild(doc.createTextNode(feature.data._quakeDesc));
+                this.popup.contentDiv.appendChild(doc.createElement("br"));
+                this.popup.contentDiv.appendChild(doc.createTextNode(feature.data._quakeDate));
             } else {
                 this.popup.toggle();
             }
@@ -99,7 +105,6 @@ self.port.on('quakes', function(quakes)
     {
         var point = new OpenLayers.LonLat(quakes[i].lng, quakes[i].lat);
         var popupClass = AutoSizeAnchoredBubble;
-        var popupContentHTML = quakes[i].desc + "<br/>" + quakes[i].date;
-        addMarker(point, popupClass, popupContentHTML, true);
+        addMarker(quakes[i], point, popupClass, true);
     }
 });
